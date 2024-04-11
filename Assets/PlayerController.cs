@@ -69,30 +69,16 @@ public class PlayerController : MonoBehaviour
         if (movementPlayer.x > 0)
         {
             Debug.Log("Entro a la condicion");
-            if (transform.position.x < 0)
-            {
-                dasheo = () => { transform.position = new Vector2(transform.position.x + 3, transform.position.y); };
-                dasheo?.Invoke();
-            }
-            else
-            {
-                dasheo = () => { transform.position = new Vector2(transform.position.x + 3, transform.position.y); };
-                dasheo?.Invoke();
-            }
+            dasheo = () => { transform.position = new Vector2(transform.position.x + 3, transform.position.y); };
+            
 
         }
         else if (movementPlayer.x < 0)
         {
-            if (transform.position.x > 0)
-            {
-                dasheo = () => { transform.position = new Vector2(transform.position.x - 3, transform.position.y); };
-                dasheo?.Invoke();
-            }
-            else
-            {
-                dasheo = () => { transform.position = new Vector2(transform.position.x - 3, transform.position.y); };
-                dasheo?.Invoke();
-            }
+            dasheo = () => { transform.position = new Vector2(transform.position.x - 3, transform.position.y); };
+            
         }
+
+        dasheo?.Invoke();
     }
 }
